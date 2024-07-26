@@ -74,9 +74,8 @@ flip f = λ y x → f x y
 -- If you want a left associative infix application operator, use
 -- RawFunctor._<$>_ from Effect.Functor.
 
-_$_ : ∀ {A : Set a} {B : A → Set b} →
-      ((x : A) → B x) → ((x : A) → B x)
-f $ x = f x
+_$_ : A → A
+_$_ f = f
 {-# INLINE _$_ #-}
 
 -- Flipped application (aka pipe-forward)
